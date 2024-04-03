@@ -18,6 +18,7 @@ public class Principal {
         System.out.println("holaaaaaaaa");
         System.out.println("Valee");
         System.out.println("Sofia");
+         System.out.println("Hola grupo");
         
     }
     

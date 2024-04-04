@@ -19,7 +19,10 @@ public class Principal {
         System.out.println("Sofia");
         System.out.println("Hola mundo 1");
         System.out.println("Hola mundo 2");
+<<<<<<< HEAD
         System.out.println("kelokeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
+=======
+>>>>>>> parent of d9a6677 (Se agrego un cambio)
     }
     
 }

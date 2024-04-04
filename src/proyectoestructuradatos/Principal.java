@@ -14,8 +14,7 @@ public class Principal {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println("hola");
-        System.out.println("holaaaaaaaa");
+
         System.out.println("Valee");
         System.out.println("Sofia");
         System.out.println("Hola mundo 1");

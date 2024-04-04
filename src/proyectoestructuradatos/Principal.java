@@ -19,6 +19,7 @@ public class Principal {
         System.out.println("Valee");
         System.out.println("Sofia");
         System.out.println("Hola mundo 1");
+        System.out.println("Hola mundo 2");
     }
     
 }

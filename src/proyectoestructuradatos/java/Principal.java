@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package proyectoestructuradatos.Modulo_2;
+package proyectoestructuradatos.java;
 
 /**
  *
@@ -15,8 +15,8 @@ public class Principal {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        MenuBb menu = new MenuBb();
-        menu.menu();
+        MenuBb m = new MenuBb();
+        m.menu();
     }
     
 }

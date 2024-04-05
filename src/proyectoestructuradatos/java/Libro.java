@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package proyectoestructuradatos.Modulo_2;
+package proyectoestructuradatos.java;
 
 /**
  *
@@ -44,4 +44,6 @@ public class Libro {
     public void setNumLibro(String numLibro) {
         this.numLibro = numLibro;
     }
+    
+  
 }

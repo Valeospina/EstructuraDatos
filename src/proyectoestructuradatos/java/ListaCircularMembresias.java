@@ -74,14 +74,14 @@ public class ListaCircularMembresias {
             NodoMembresia aux = inicio;
             // Recorrer la lista circular y construir una cadena con la información de cada usuario
             do {
-                s += aux.getDato().getId() + "-" + aux.getDato().getNombre() + " | ";
+                s += "id:"+aux.getDato().getId() + " - " +aux.getDato().getNombre() + " | ";
                 aux = aux.getSiguiente();
             } while (aux != inicio); // El bucle se detiene al llegar de nuevo al inicio
             // Mostrar la lista de usuarios en un cuadro de diálogo
             JOptionPane.showMessageDialog(null, "La lista de miembros contiene: \n" + s, "Contenido de la lista", JOptionPane.PLAIN_MESSAGE);
         } else {
             // Si la lista está vacía, mostrar un mensaje indicando que no hay datos registrados
-            JOptionPane.showMessageDialog(null, "No hay datos registrados aun");
+            JOptionPane.showMessageDialog(null, "No hay datos registrados aun","Miembros", JOptionPane.INFORMATION_MESSAGE);
         }
     }
 }

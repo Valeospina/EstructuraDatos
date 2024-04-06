@@ -3,12 +3,12 @@ package proyectoestructuradatos.java;
 //modulo 7 Gabriel Arr
 import javax.swing.JOptionPane;
 
-public class LIstaCircularMembrecias {
+public class ListaCircularMembresias {
 
     private NodoMembresia inicio;
     private NodoMembresia fin;
 
-    public LIstaCircularMembrecias() {
+    public ListaCircularMembresias() {
         this.inicio = null;
         this.fin = null;
     }

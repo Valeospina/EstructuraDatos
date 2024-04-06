@@ -12,9 +12,11 @@ import javax.swing.JOptionPane;
  */
 public class MenuBb {
      private ColaLibrosPrestados cola;
+     private ListaCircularMembresias membrecia;
 
     public MenuBb() {
         this.cola = new ColaLibrosPrestados();
+        this.membrecia= new ListaCircularMembresias();
     }
 
     public void menu() {
@@ -29,7 +31,9 @@ public class MenuBb {
                             "5. Devolver libro\n" +
                             "6. Buscar libro por título\n" +
                             "7. Agregar nuevo libro\n" +
-                            "8. Salir\n\n" +
+                            "8. Hacerse miembro\n" +
+                            "9. Mostrar miembros\n" +
+                            "10. Salir\n\n" +
                             "Digite la opción que desea: ",
                     "MENÚ", JOptionPane.QUESTION_MESSAGE));
             switch (op) {
@@ -79,6 +83,14 @@ public class MenuBb {
                     cola.agregarNuevoLibro();
                     break;
                 case 8:
+                    membrecia.agregarUsuario();
+                    JOptionPane.showMessageDialog(null, "Su mebresia a sido añadida", "Mebresia", JOptionPane.INFORMATION_MESSAGE);
+                    break;
+                case 9:
+                    membrecia.mostrar();
+                    JOptionPane.showMessageDialog(null, "Saliendo de los miembros... ", "Miembros", JOptionPane.INFORMATION_MESSAGE);
+                    break;
+                case 10:
                     JOptionPane.showMessageDialog(null, "Saliendo del Sistema... ", "Salir", JOptionPane.INFORMATION_MESSAGE);
                     break;
                 default:
@@ -86,6 +98,6 @@ public class MenuBb {
                             "Error", JOptionPane.ERROR_MESSAGE);
                     break;
             }
-        } while (op != 8);
+        } while (op != 10);
     }
 }

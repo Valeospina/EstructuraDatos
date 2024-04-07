@@ -230,4 +230,51 @@ public class ColaLibrosPrestados {
         JOptionPane.showMessageDialog(null, "El libro \"" + libro.getTituloLibro() + "\" se ha agregado al inventario.", 
                 "Libro agregado", JOptionPane.INFORMATION_MESSAGE);
     }
+    //para eliminar el libro que uno ingrese:
+    public void eliminarLibro(String titulo) {
+        if (!vacia()) {
+            Nodo actual = inicio;
+            Nodo anterior = null;
+            boolean encontrado = false;
+
+            // Primero busco el libro que quiero eliminar:
+            while (actual != null) {
+                Libro libro = actual.getDato();
+                if (libro.getTituloLibro().equalsIgnoreCase(titulo)) {
+                    encontrado = true;
+                    break;
+                }
+                anterior = actual;
+                actual = actual.getSiguiente();
+                if (actual == inicio) {
+                    break;
+                }
+            }
+
+            // Si encotramos el libro o sea que existe:
+            if (encontrado) {
+                if (inicio == fin) {
+                    inicio = null;
+                    fin = null;
+                } else if (actual == inicio) {
+                    inicio = inicio.getSiguiente();
+                    fin.setSiguiente(inicio);
+                } else if (actual == fin) {
+                    fin = anterior;
+                    fin.setSiguiente(inicio);
+                } else {
+                    anterior.setSiguiente(actual.getSiguiente());
+                }
+
+                JOptionPane.showMessageDialog(null, "¡Felicidades! El libro \"" + titulo + "\" se ha eliminado correctamente de la lista.",
+                        "Libro eliminado", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(null, "¡Lo sentimos! El libro \"" + titulo + "\" no se ha agregado a la lista.",
+                        "Libro no encontrado", JOptionPane.INFORMATION_MESSAGE);
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "¡Error! No hay libros en el inventario para eliminar, por favor primero ingrese uno a la lista.",
+                    "Error", JOptionPane.INFORMATION_MESSAGE);
+        }
+}
 }

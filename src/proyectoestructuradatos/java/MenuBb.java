@@ -33,7 +33,8 @@ public class MenuBb {
                             "7. Agregar nuevo libro\n" +
                             "8. Hacerse miembro\n" +
                             "9. Mostrar miembros\n" +
-                            "10. Salir\n\n" +
+                            "10 .Eliminar libro\n" +
+                            "11. Salir\n\n" +
                             "Digite la opción que desea: ",
                     "MENÚ", JOptionPane.QUESTION_MESSAGE));
             switch (op) {
@@ -59,7 +60,6 @@ public class MenuBb {
                     cola.mostrarLibPrestados();
                     break;
                 case 5:
-                    // Lógica para devolver un libro
                     if (cola.vaciaPrestados()) {
                         JOptionPane.showMessageDialog(null, "No hay libros prestados para devolver", "Error", JOptionPane.ERROR_MESSAGE);
                     } else {
@@ -91,6 +91,10 @@ public class MenuBb {
                     JOptionPane.showMessageDialog(null, "Saliendo de los miembros... ", "Miembros", JOptionPane.INFORMATION_MESSAGE);
                     break;
                 case 10:
+                String tituloEliminar = JOptionPane.showInputDialog("Ingrese el título del libro a eliminar:");
+                cola.eliminarLibro(tituloEliminar);  
+                break;
+                case 11:
                     JOptionPane.showMessageDialog(null, "Saliendo del Sistema... ", "Salir", JOptionPane.INFORMATION_MESSAGE);
                     break;
                 default:
@@ -98,6 +102,6 @@ public class MenuBb {
                             "Error", JOptionPane.ERROR_MESSAGE);
                     break;
             }
-        } while (op != 10);
+        } while (op != 11);
     }
 }

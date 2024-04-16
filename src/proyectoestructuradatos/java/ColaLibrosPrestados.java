@@ -276,5 +276,22 @@ public class ColaLibrosPrestados {
             JOptionPane.showMessageDialog(null, "¡Error! No hay libros en el inventario para eliminar, por favor primero ingrese uno a la lista.",
                     "Error", JOptionPane.INFORMATION_MESSAGE);
         }
-}
+    }
+    //modulo 8 recursividad para contar
+    public Nodo getInicioPrestados() {
+    return inicioPrestados;
+ }
+    public int contarLibrosPrestadosRecursivo(Nodo nodo) {
+    int count = 0;
+    if (nodo != null) {
+        
+        // Incrementa el contador en 1 para el libro actual
+        count++;
+        // Si el siguiente nodo no es el nodo de inicio, cuenta de forma recursiva los libros prestados
+        if (nodo.getSiguiente() != inicioPrestados) {
+            count += contarLibrosPrestadosRecursivo(nodo.getSiguiente());
+        }
+    }
+    return count;
+    }
 }

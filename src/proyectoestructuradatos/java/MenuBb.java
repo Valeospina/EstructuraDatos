@@ -34,7 +34,8 @@ public class MenuBb {
                             "8. Hacerse miembro\n" +
                             "9. Mostrar miembros\n" +
                             "10 .Eliminar libro\n" +
-                            "11. Salir\n\n" +
+                            "11. Ver cantidad de libros prestados\n" +
+                            "12. Salir\n\n" +
                             "Digite la opción que desea: ",
                     "MENÚ", JOptionPane.QUESTION_MESSAGE));
             switch (op) {
@@ -95,6 +96,12 @@ public class MenuBb {
                 cola.eliminarLibro(tituloEliminar);  
                 break;
                 case 11:
+                    Nodo inicioPrestados = cola.getInicioPrestados();
+                    int cantidadLibros = cola.contarLibrosPrestadosRecursivo(inicioPrestados);
+                    JOptionPane.showMessageDialog(null, "Cantidad de libros prestados: " + cantidadLibros);
+    
+                    break;
+                case 12:
                     JOptionPane.showMessageDialog(null, "Saliendo del Sistema... ", "Salir", JOptionPane.INFORMATION_MESSAGE);
                     break;
                 default:
@@ -102,6 +109,6 @@ public class MenuBb {
                             "Error", JOptionPane.ERROR_MESSAGE);
                     break;
             }
-        } while (op != 11);
+        } while (op != 12);
     }
 }

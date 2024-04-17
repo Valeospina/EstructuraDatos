@@ -12,6 +12,7 @@ import javax.swing.JOptionPane;
  */
 public class MenuBb {
 
+    
     private ColaLibrosPrestados cola;
     private ListaCircularMembresias membrecia;
     private listaCircularLibrosR recomendados;
@@ -19,7 +20,7 @@ public class MenuBb {
     public MenuBb() {
         this.cola = new ColaLibrosPrestados();
         this.membrecia = new ListaCircularMembresias();
-         this.recomendados = new listaCircularLibrosR();
+        this.recomendados = new listaCircularLibrosR();
     }
 
     public void menu() {
@@ -39,8 +40,9 @@ public class MenuBb {
                     + "10. Eliminar libro\n"
                     + "11. Agregar libro a Recomendaciones\n"
                     + "12. Eliminar libro de Recomendaciones\n"
-                    + "13. Mostrar Libros de Recmendaciones\n"
-                    + "14. Salir\n\n"
+                    + "13. Mostrar Libros de Recomendaciones\n"
+                    + "14. Ver cantidad de libros prestados\n"
+                    + "15. Salir\n\n"
                     + "Digite la opción que desea: ",
                     "MENÚ", JOptionPane.QUESTION_MESSAGE));
             switch (op) {
@@ -90,7 +92,7 @@ public class MenuBb {
                     break;
                 case 8:
                     membrecia.agregarUsuario();
-                    JOptionPane.showMessageDialog(null, "Su mebresia a sido añadida", "Mebresia", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Su membresía a sido añadida", "Membresía", JOptionPane.INFORMATION_MESSAGE);
                     break;
                 case 9:
                     membrecia.mostrar();
@@ -111,6 +113,11 @@ public class MenuBb {
                     recomendados.mostrarLibroR();
                     break;
                 case 14:
+                    Nodo inicioPrestados = cola.getInicioPrestados();
+                    int cantidadLibros = cola.contarLibrosPrestadosRecursivo(inicioPrestados);
+                    JOptionPane.showMessageDialog(null, "Cantidad de libros prestados: " + cantidadLibros);
+                    break;
+                case 15:
                     JOptionPane.showMessageDialog(null, "Saliendo del Sistema... ", "Salir", JOptionPane.INFORMATION_MESSAGE);
                     break;
                 default:
@@ -118,6 +125,6 @@ public class MenuBb {
                             "Error", JOptionPane.ERROR_MESSAGE);
                     break;
             }
-        } while (op != 11);
+        } while (op != 15);
     }
 }

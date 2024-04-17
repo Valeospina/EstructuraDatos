@@ -47,6 +47,7 @@ public class listaCircularLibrosR {
             fin = nuevo;
             fin.setSiguiente(inicio);
         }
+         JOptionPane.showMessageDialog(null, "Libro añadido exitosamente", "Añadido exitosamente", JOptionPane.INFORMATION_MESSAGE);
     }
 
     public void mostrarLibroR() {
@@ -66,29 +67,33 @@ public class listaCircularLibrosR {
     }
 
     public void eliminarLibroR(String titulo) {
-
-        if (!vacia()) {//para cuando el libro que se va a eliminar es el primer nodo de lista
-            if (inicio.getDato().getTituloLibro().equals(titulo)) {// Si tiene solo uno, queda vacia
+        if (!vacia()) {
+            if (inicio.getDato().getTituloLibro().equals(titulo)) {
                 if (inicio == fin) {
                     inicio = null;
                     fin = null;
                 } else {
-                    inicio = inicio.getSiguiente(); //sino avanza al siguiente y se borra
+                    inicio = inicio.getSiguiente();
                     fin.setSiguiente(inicio);
                 }
-                return;
+              
             }
-            NodoRecomendados actual = inicio;// aqui se busquw el quwe se va a eliminar
+            NodoRecomendados actual = inicio;
             while (actual.getSiguiente() != inicio && !actual.getSiguiente().getDato().getTituloLibro().equals(titulo)) {
                 actual = actual.getSiguiente();
             }
-            if (actual.getSiguiente() != inicio) {// busca si existe y ahi se elimina
+            if (actual.getSiguiente() != inicio) {
                 NodoRecomendados siguiente = actual.getSiguiente().getSiguiente();
                 actual.setSiguiente(siguiente);
                 if (actual.getSiguiente() == inicio) {
                     fin = actual;
                 }
+                JOptionPane.showMessageDialog(null, "Libro eliminado exitosamente: " + titulo, "Eliminación exitosa", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(null, "No se encontró el libro a eliminar: " + titulo, "Error", JOptionPane.ERROR_MESSAGE);
             }
+        } else {
+            JOptionPane.showMessageDialog(null, "La lista de libros recomendados está vacía", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
 }

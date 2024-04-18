@@ -65,8 +65,8 @@ public class listaCircularLibrosR {
             JOptionPane.showMessageDialog(null, "Lo sentimos, no hay libros recomendados en este momento, ingrese uno por favor. ", "Lista de Recomendaciones", JOptionPane.INFORMATION_MESSAGE);
         }
     }
-
-   public void eliminarLibroR(String titulo) {
+    
+    public void eliminarLibroR(String titulo) {
     if (!vacia()) {
         if (inicio.getDato().getTituloLibro().equals(titulo)) {
             if (inicio == fin) {

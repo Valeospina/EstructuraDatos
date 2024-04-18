@@ -25,9 +25,12 @@ public class ColaLibrosPrestados {
 
     public void agregar() {
         Libro libro = new Libro();
-        libro.setTituloLibro(JOptionPane.showInputDialog("Digite el titulo del libro: "));
-        libro.setAutorLibro(JOptionPane.showInputDialog("Nombre del autor del libro: "));
-        libro.setNumLibro(JOptionPane.showInputDialog("Digite el numero del libro(ISBN): "));
+        libro.setTituloLibro(
+                JOptionPane.showInputDialog("Digite el titulo del libro: "));
+        libro.setAutorLibro(
+                JOptionPane.showInputDialog("Nombre del autor del libro: "));
+        libro.setNumLibro(
+                JOptionPane.showInputDialog("Digite el numero del libro(ISBN): "));
 
         Nodo nuevo = new Nodo();
         nuevo.setDato(libro);

@@ -66,34 +66,35 @@ public class listaCircularLibrosR {
         }
     }
 
-    public void eliminarLibroR(String titulo) {
-        if (!vacia()) {
-            if (inicio.getDato().getTituloLibro().equals(titulo)) {
-                if (inicio == fin) {
-                    inicio = null;
-                    fin = null;
-                } else {
-                    inicio = inicio.getSiguiente();
-                    fin.setSiguiente(inicio);
-                }
-              
-            }
-            NodoRecomendados actual = inicio;
-            while (actual.getSiguiente() != inicio && !actual.getSiguiente().getDato().getTituloLibro().equals(titulo)) {
-                actual = actual.getSiguiente();
-            }
-            if (actual.getSiguiente() != inicio) {
-                NodoRecomendados siguiente = actual.getSiguiente().getSiguiente();
-                actual.setSiguiente(siguiente);
-                if (actual.getSiguiente() == inicio) {
-                    fin = actual;
-                }
-                JOptionPane.showMessageDialog(null, "Libro eliminado exitosamente: " + titulo, "Eliminación exitosa", JOptionPane.INFORMATION_MESSAGE);
+   public void eliminarLibroR(String titulo) {
+    if (!vacia()) {
+        if (inicio.getDato().getTituloLibro().equals(titulo)) {
+            if (inicio == fin) {
+                inicio = null;
+                fin = null;
             } else {
-                JOptionPane.showMessageDialog(null, "No se encontró el libro a eliminar: " + titulo, "Error", JOptionPane.ERROR_MESSAGE);
+                inicio = inicio.getSiguiente();
+                fin.setSiguiente(inicio);
             }
-        } else {
-            JOptionPane.showMessageDialog(null, "La lista de libros recomendados está vacía", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Libro eliminado exitosamente: " + titulo, "Eliminación exitosa", JOptionPane.INFORMATION_MESSAGE);
+            return;
         }
+        NodoRecomendados actual = inicio;
+        while (actual.getSiguiente() != inicio && !actual.getSiguiente().getDato().getTituloLibro().equals(titulo)) {
+            actual = actual.getSiguiente();
+        }
+        if (actual.getSiguiente() != inicio) {
+            NodoRecomendados siguiente = actual.getSiguiente().getSiguiente();
+            actual.setSiguiente(siguiente);
+            if (siguiente == inicio) { //
+                fin = actual;
+            }
+            JOptionPane.showMessageDialog(null, "Libro eliminado exitosamente: " + titulo, "Eliminación exitosa", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(null, "No se encontró el libro a eliminar: " + titulo, "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    } else {
+        JOptionPane.showMessageDialog(null, "La lista de libros recomendados está vacía", "Error", JOptionPane.ERROR_MESSAGE);
     }
+}
 }

@@ -27,7 +27,8 @@ public class MenuBb {
         int op;
         do {
             op = Integer.parseInt(JOptionPane.showInputDialog(null,
-                    "Menú Principal \n\n\n"
+                    "BIENVENIDO A LA BIBLIOTECA  \n\n"
+                    + "Menú Principal \n\n"
                     + "1. Agregar libro\n"
                     + "2. Prestar libro\n"
                     + "3. Mostrar los libros agregados\n"
